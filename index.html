@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANNAPURNA 360 | Food Rescue & Prevention Network</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f7f3;color:#17301f}
+header{background:#173d25;color:white;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+.logo{font-size:25px;font-weight:800}.tag{font-size:12px;color:#cce7cf}
+nav a{color:white;text-decoration:none;margin-left:18px;font-size:14px}
+.hero{padding:70px 6%;background:linear-gradient(135deg,#e6f4e7,#fff);display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.hero h1{font-size:48px;margin:10px 0}.hero p{font-size:18px;line-height:1.6}.badge{display:inline-block;padding:8px 13px;background:#d5edd9;border-radius:20px;font-weight:bold}
+.flow{background:white;border-radius:22px;padding:25px;box-shadow:0 10px 35px #0001}
+.flow div{padding:15px;margin:10px 0;border-radius:12px;background:#f0f6ef;font-weight:bold}
+section{padding:55px 6%}.title{text-align:center;margin-bottom:30px}.title h2{font-size:32px;margin:5px}.title p{color:#58705d}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:white;border-radius:18px;padding:22px;box-shadow:0 5px 22px #00000010}.card h3{margin-top:0}.num{font-size:28px;font-weight:bold;color:#2b7940}
+form{background:white;padding:25px;border-radius:18px;box-shadow:0 5px 22px #00000010;max-width:900px;margin:auto}
+.row{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}label{font-weight:bold;font-size:14px}input,select,textarea{width:100%;padding:12px;margin-top:7px;border:1px solid #ccd8cd;border-radius:9px;font-size:15px}
+button{background:#27753d;color:white;border:0;border-radius:10px;padding:13px 20px;font-weight:bold;cursor:pointer;margin-top:15px}button:hover{background:#1d5e31}
+.result{margin-top:20px;padding:20px;border-radius:15px;background:#eef7ef;display:none}
+.score{font-size:42px;font-weight:800}.green{color:#20783b}.yellow{color:#a36d00}.red{color:#a22b2b}
+table{width:100%;border-collapse:collapse;background:white;border-radius:15px;overflow:hidden}th,td{padding:13px;border-bottom:1px solid #e5ebe5;text-align:left}th{background:#edf5ed}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.kpi{background:white;padding:20px;border-radius:15px}.kpi b{font-size:28px;display:block}
+footer{background:#173d25;color:white;text-align:center;padding:30px}
+.small{font-size:13px;color:#607363;line-height:1.5}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.hero h1{font-size:36px}.row,.kpis{grid-template-columns:1fr 1fr}nav{display:none}}
+@media(max-width:520px){.row,.kpis{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<div><div class="logo">ANNAPURNA 360</div><div class="tag">Prevent • Rescue • Recover • Learn</div></div>
+<nav><a href="#about">About</a><a href="#predict">Predict</a><a href="#rescue">Rescue</a><a href="#dashboard">Impact</a></nav>
+</header>
+
+<section class="hero">
+<div>
+<span class="badge">SIH Solution Concept • FoodTech & Rural Development</span>
+<h1>Stop food waste before it becomes waste.</h1>
+<p>ANNAPURNA 360 is a practical software-first platform that predicts food demand, detects potential surplus, guides safe next steps, connects suitable recipients and learns why waste happens.</p>
+<a href="#predict"><button>Try the Working Demo</button></a>
+</div>
+<div class="flow">
+<h3>How ANNAPURNA 360 works</h3>
+<div>1️⃣ PREVENT — Predict how much to prepare</div>
+<div>2️⃣ RESCUE — Register and prioritize surplus</div>
+<div>3️⃣ RECOVER — Choose an appropriate recovery pathway</div>
+<div>4️⃣ LEARN — Build a Food Waste Fingerprint</div>
+</div>
+</section>
+
+<section id="about">
+<div class="title"><h2>Your Requirements — Built Into The Website</h2><p>The project is designed around the requirements you gave for the hackathon.</p></div>
+<div class="grid">
+<div class="card"><div class="num">01</div><h3>Rural + Food Focus</h3><p>Supports colleges, hostels, hotels, restaurants, caterers, supermarkets, institutional kitchens, food processors and Farmer/FPO workflows.</p></div>
+<div class="card"><div class="num">02</div><h3>Low Budget</h3><p>Software-first architecture. No expensive hardware is required for the MVP. Sensors can be added later.</p></div>
+<div class="card"><div class="num">03</div><h3>One System, Multiple Problems</h3><p>Prevention, surplus rescue, recipient matching, route planning, recovery and root-cause learning are connected in one workflow.</p></div>
+<div class="card"><div class="num">04</div><h3>Practical + Explainable</h3><p>Every decision shows the reason: demand estimate, surplus estimate, urgency, need, distance and recommended next action.</p></div>
+<div class="card"><div class="num">05</div><h3>Innovation</h3><p>The focus is not just donation. The system creates a Food Passport, Rescue Priority Score and Food Waste Fingerprint in one continuous loop.</p></div>
+<div class="card"><div class="num">06</div><h3>Human-in-the-Loop Safety</h3><p>AI is decision support, not a food-safety guarantee. Final redistribution decisions follow applicable rules and authorized personnel.</p></div>
+</div>
+</section>
+
+<section id="predict">
+<div class="title"><h2>AI Demand & Surplus Predictor</h2><p>Enter simple information and receive an explainable recommendation.</p></div>
+<form onsubmit="predict(event)">
+<div class="row">
+<div><label>Expected people / customers</label><input id="people" type="number" min="1" value="500" required></div>
+<div><label>Historical average consumed meals</label><input id="avg" type="number" min="1" value="430" required></div>
+<div><label>Planned meals to prepare</label><input id="planned" type="number" min="1" value="520" required></div>
+<div><label>Event type</label><select id="event"><option>College / Hostel</option><option>Restaurant</option><option>Hotel / Catering</option><option>Community event</option></select></div>
+</div>
+<button>Run AI Analysis</button>
+<div id="predictResult" class="result"></div>
+</form>
+</section>
+
+<section id="rescue">
+<div class="title"><h2>Food Rescue Registration</h2><p>Create a digital Food Passport and calculate a Rescue Priority Score.</p></div>
+<form onsubmit="rescue(event)">
+<div class="row">
+<div><label>Food type</label><input id="food" value="Vegetable Rice" required></div>
+<div><label>Quantity (meals)</label><input id="qty" type="number" value="120" min="1" required></div>
+<div><label>Preparation / harvest time</label><input id="ptime" type="datetime-local" required></div>
+<div><label>Distance to nearest suitable partner (km)</label><input id="distance" type="number" value="3" min="0" step="0.1" required></div>
+<div><label>Storage condition</label><select id="storage"><option value="good">Appropriate / maintained</option><option value="uncertain">Uncertain</option><option value="poor">Poor / not maintained</option></select></div>
+<div><label>Recipient need</label><select id="need"><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select></div>
+</div>
+<button>Create Food Passport</button>
+<div id="rescueResult" class="result"></div>
+</form>
+</section>
+
+<section id="match">
+<div class="title"><h2>Smart Recipient Matching</h2><p>Example allocation — matching is based on need, capacity, suitability, distance and urgency.</p></div>
+<div class="grid">
+<div class="card"><h3>NGO A</h3><p>Need: 100 meals • Distance: 3 km • Capacity: 120</p><b>Suggested allocation: 100 meals</b></div>
+<div class="card"><h3>Shelter B</h3><p>Need: 50 meals • Distance: 2 km • Capacity: 60</p><b>Suggested allocation: 20 meals</b></div>
+<div class="card"><h3>Community Kitchen C</h3><p>Need: 50 meals • Distance: 5 km • Capacity: 80</p><b>Suggested allocation: 0–20 meals</b></div>
+</div>
+<p class="small">For a real deployment, verified partners, live availability and routing APIs would replace these demo records.</p>
+</section>
+
+<section>
+<div class="title"><h2>Food Waste Fingerprint</h2><p>ANNAPURNA 360 learns WHY food is being wasted, not only how much.</p></div>
+<div class="grid">
+<div class="card"><h3>College A</h3><p>Overproduction <b>45%</b></p><p>Plate waste <b>20%</b></p><p>Storage loss <b>15%</b></p><p>Procurement mismatch <b>10%</b></p><button onclick="alert('Recommendation: reduce recurring overproduction using the demand forecast.')">Get Recommendation</button></div>
+<div class="card"><h3>Example insight</h3><p>If Friday dinner repeatedly produces surplus, the system flags the pattern and recommends a lower preparation quantity for future Fridays.</p></div>
+</div>
+</section>
+
+<section id="dashboard">
+<div class="title"><h2>Impact Dashboard</h2><p>Track prevention, rescue and recovery outcomes.</p></div>
+<div class="kpis">
+<div class="kpi"><span>Surplus detected</span><b>18.2 T</b></div>
+<div class="kpi"><span>Food rescued</span><b>12.4 T</b></div>
+<div class="kpi"><span>Waste prevented</span><b>3.8 T</b></div>
+<div class="kpi"><span>Partners connected</span><b>27</b></div>
+</div>
+<br>
+<table><tr><th>Batch</th><th>Food</th><th>Quantity</th><th>Priority</th><th>Status</th></tr>
+<tr><td>ANN-2026-00152</td><td>Vegetable Rice</td><td>120 meals</td><td>96/100</td><td>Rescue first</td></tr>
+<tr><td>ANN-2026-00153</td><td>Tomatoes</td><td>200 kg</td><td>73/100</td><td>Partner review</td></tr>
+<tr><td>ANN-2026-00154</td><td>Chapati</td><td>80 meals</td><td>42/100</td><td>Low urgency</td></tr>
+</table>
+</section>
+
+<section>
+<div class="title"><h2>Basic Technical Architecture</h2><p>Simple enough for an MVP, scalable for a real deployment.</p></div>
+<div class="grid">
+<div class="card"><h3>Frontend</h3><p>Responsive web app. Can later be converted into a Flutter mobile app.</p></div>
+<div class="card"><h3>Backend</h3><p>Python + FastAPI for real APIs, authentication, matching and prediction services.</p></div>
+<div class="card"><h3>Database</h3><p>PostgreSQL for users, food batches, partners, outcomes and historical data.</p></div>
+<div class="card"><h3>AI</h3><p>Python, Pandas and Scikit-learn for demand forecasting, scoring and learning.</p></div>
+<div class="card"><h3>Maps</h3><p>OpenStreetMap + routing service for practical low-cost route planning.</p></div>
+<div class="card"><h3>Offline-first</h3><p>Local storage allows field users to record data and sync when connectivity returns.</p></div>
+</div>
+</section>
+
+<footer>
+<h2>ANNAPURNA 360</h2>
+<p>Prevent. Rescue. Recover. Learn.</p>
+<p class="small" style="color:#d7e8d9">AI provides decision support. Food safety and redistribution must follow applicable regulations and authorized human review.</p>
+</footer>
+
+<script>
+function predict(e){
+ e.preventDefault();
+ const people=+document.getElementById('people').value, avg=+document.getElementById('avg').value, planned=+document.getElementById('planned').value;
+ const recommended=Math.ceil(Math.max(people,avg)*1.05);
+ const surplus=Math.max(0,planned-avg);
+ const over=Math.max(0,planned-recommended);
+ let msg=`<div class="score green">${recommended} meals</div><b>Recommended preparation quantity</b><p>Reason: expected attendance is ${people}, historical consumption is ${avg}, and a small buffer is included.</p>`;
+ if(over>0) msg+=`<p><b>Potential overproduction:</b> ${over} meals above the recommended level. Consider reducing preparation.</p>`;
+ else msg+=`<p><b>Potential surplus:</b> ${surplus} meals based on historical consumption. Monitor actual consumption.</p>`;
+ document.getElementById('predictResult').innerHTML=msg; document.getElementById('predictResult').style.display='block';
+}
+function rescue(e){
+ e.preventDefault();
+ const qty=+document.getElementById('qty').value, d=+document.getElementById('distance').value;
+ const storage=document.getElementById('storage').value, need=document.getElementById('need').value;
+ let score=55 + Math.min(20,qty/20) + Math.max(0,15-d) + (need==='high'?10:need==='medium'?5:0) + (storage==='good'?5:storage==='uncertain'?-5:-25);
+ score=Math.max(0,Math.min(100,Math.round(score)));
+ let cls=score>=75?'green':score>=45?'yellow':'red';
+ let action=storage==='poor'?'🔴 Do not redistribute based on current information. Human safety assessment required.':score>=75?'🚨 High rescue priority — verify safety and contact a suitable partner quickly.':score>=45?'🟡 Medium priority — human review and partner confirmation required.':'🟢 Lower priority — continue monitoring and assess suitable recovery.';
+ const id='ANN-'+new Date().getFullYear()+'-'+Math.floor(10000+Math.random()*89999);
+ document.getElementById('rescueResult').innerHTML=`<h3>Food Passport</h3><p><b>Batch ID:</b> ${id}</p><p><b>Food:</b> ${document.getElementById('food').value} • <b>Quantity:</b> ${qty} meals</p><p><b>Distance:</b> ${d} km • <b>Need:</b> ${need}</p><div class="score ${cls}">${score}/100</div><b>Rescue Priority Score</b><p>${action}</p><p class="small">This score is a decision-support demonstration. It does not certify food safety.</p>`;
+ document.getElementById('rescueResult').style.display='block';
+}
+document.getElementById('ptime').value=new Date().toISOString().slice(0,16);
+</script>
+</body>
+</html>
